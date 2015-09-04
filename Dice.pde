@@ -1,26 +1,24 @@
-
 		
 void setup()
 {
 	size(400,400);
-	noLoop();
-	
-	
-	
-	
+	noLoop();	
 }
 void draw()
 {
 	//your code here
 	background(0,0,0);
+	int sum = 0; 
 	for(int i = 0;i < 400;i += 51) {
 		for(int j = 50;j < 400; j += 51) {
 			Die tree = new Die(i,j);
 			tree.show();
+			sum = sum + tree.dots
 		}
 	}
 	
-	
+	fill(255);
+	text("Your total is: " + sum, 25,40);
 
 }
 void mousePressed()
@@ -30,13 +28,13 @@ void mousePressed()
 class Die //models one single dice cube
 {
 	//variable declarations here
-	int theX, theY;
+	int theX, theY, dots;
 	Die(int x, int y) //constructor
 	{
 		//variable initializations here
 		theX = x;
 		theY = y;
-
+		dots = (int)(Math.random()*6+1);
 	}
 	void roll()
 	{
@@ -45,7 +43,7 @@ class Die //models one single dice cube
 	void show()
 	{
 		//your code here
-		int dots = (int)(Math.random()*6+1);
+		
 		noStroke();
 		fill(255,0,0);
 		rect(theX,theY,50,50);
