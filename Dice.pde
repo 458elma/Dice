@@ -46,7 +46,7 @@ class Die //models one single dice cube
 		
 		noStroke();
 		fill(255,0,0);
-		rect(theX,theY,50,50);
+		rect(theX,theY,50,50,10);
 		if (dots == 1) {
 			fill(255);
 			ellipse(theX+25,theY+25,10,10);
