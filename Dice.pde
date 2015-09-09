@@ -9,8 +9,8 @@ void draw()
 	//your code here
 	background(0,0,0);
 	int sum = 0; 
-	for(int i = 0;i < 400;i += 51) {
-		for(int j = 50;j < 400; j += 51) {
+	for(int i = -2.5;i < 400;i += 51) {
+		for(int j = 45;j < 400; j += 51) {
 			Die tree = new Die(i,j);
 			tree.show();
 			sum = sum + tree.dots
@@ -18,7 +18,8 @@ void draw()
 	}
 	
 	fill(255);
-	text("Your total is: " + sum, 25,40);
+	textSize(20);
+	text("Your total is: " + sum, 125,25);
 
 }
 void mousePressed()
@@ -39,6 +40,7 @@ class Die //models one single dice cube
 	void roll()
 	{
 		//your code here
+		
 	}
 	void show()
 	{
